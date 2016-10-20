@@ -53,10 +53,5 @@ class MusicMapper:
 		currentNote = self.MUSIC_SCALE.index(start)
 		for point in transformedPoints:
 			currentNote+= point
-<<<<<<< HEAD
-			musicMap.append( self.MUSIC_SCALE[int(currentNote)%len(self.MUSIC_SCALE)] )
-			#musicMap.append(point)
-=======
 			musicMap.append( [self.MUSIC_SCALE[int(currentNote)%len(self.MUSIC_SCALE)], 4] )
->>>>>>> issue#3
 		return musicMap
