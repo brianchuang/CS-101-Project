@@ -1,5 +1,6 @@
 from projectUtils import Evaluator, Datifier, MusicMapper
 import math
+import pysynth as ps
 def main():
 	evaluator = Evaluator('x')
 	print(evaluator.toString())
@@ -7,5 +8,5 @@ def main():
 	print(datafier.fillPoints())
 	mapper = MusicMapper()
 	musicMap = mapper.transformToMusic(datafier.fillPoints())
-	print musicMap
+	ps.make_wav(musicMap, fn = "test.wav")
 main()
