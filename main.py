@@ -1,5 +1,6 @@
 from projectUtils import Evaluator, Datifier, MusicMapper
 import math
+import pysynth as ps
 def main():
 	expr = raw_input('Continous function: ')
 	lowBound = eval(raw_input('Lower bound: '))
@@ -9,6 +10,6 @@ def main():
 	evaluator = Evaluator(expr)
 	datafier = Datifier(lowerBound = lowBound, upperBound = upBound, pace = incr, evaluator = evaluator)
 	mapper = MusicMapper()
-	musicMap = mapper.transformToMusic(datafier.fillPoints(), transform = Evaluator('exp(x)'))
-	print musicMap
+	musicMap = mapper.transformToMusic(datafier.fillPoints())
+	ps.make_wav(musicMap, fn = "test.wav")
 main()

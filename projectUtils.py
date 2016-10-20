@@ -33,9 +33,9 @@ class Datifier:
 class MusicMapper: 
 
 	def __init__(self): 
-		self.MUSIC_SCALE = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+		self.MUSIC_SCALE = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
 
-	def transformToMusic(self, dataPoints, transform = Evaluator(), start = 'A'):
+	def transformToMusic(self, dataPoints, transform = Evaluator(), start = 'a'):
 		deltaList = []
 		arg = transform.getVariableList()[0]
 
@@ -53,6 +53,10 @@ class MusicMapper:
 		currentNote = self.MUSIC_SCALE.index(start)
 		for point in transformedPoints:
 			currentNote+= point
+<<<<<<< HEAD
 			musicMap.append( self.MUSIC_SCALE[int(currentNote)%len(self.MUSIC_SCALE)] )
 			#musicMap.append(point)
+=======
+			musicMap.append( [self.MUSIC_SCALE[int(currentNote)%len(self.MUSIC_SCALE)], 4] )
+>>>>>>> issue#3
 		return musicMap
