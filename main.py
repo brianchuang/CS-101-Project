@@ -1,10 +1,9 @@
-from Evaluator import Evaluator
+from projectUtils import Evaluator, Datifier
+import math
 def main():
-	evaluator = Evaluator('2*x+2*y')
+	evaluator = Evaluator('sin(x)')
 	print(evaluator.toString())
-	varList = {} toString
-	for var in evaluator.getVariableList(): 
-		varList[var] = 2
-	print(evaluator.evaluate(varList))
+	datafier = Datifier(lowerBound = 0, upperBound = math.pi * 4, pace = math.pi/2, evaluator = evaluator)
+	print(datafier.fillPoints())
 
 main()
