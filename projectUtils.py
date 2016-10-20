@@ -41,7 +41,7 @@ class MusicMapper:
 
 		for index in range(len(dataPoints)-1):
 			point1 = dataPoints[index]
-			point2 = dataPoints[index] + 1
+			point2 = dataPoints[index + 1]
 			deltaList.append(point2 - point1)
 
 		transformedPoints = []
@@ -54,4 +54,5 @@ class MusicMapper:
 		for point in transformedPoints:
 			currentNote+= point
 			musicMap.append( self.MUSIC_SCALE[int(currentNote)%len(self.MUSIC_SCALE)] )
+			#musicMap.append(point)
 		return musicMap
