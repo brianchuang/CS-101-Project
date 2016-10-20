@@ -1,9 +1,11 @@
-from projectUtils import Evaluator, Datifier
+from projectUtils import Evaluator, Datifier, MusicMapper
 import math
 def main():
-	evaluator = Evaluator('sin(x)')
+	evaluator = Evaluator('x')
 	print(evaluator.toString())
-	datafier = Datifier(lowerBound = 0, upperBound = math.pi * 4, pace = math.pi/2, evaluator = evaluator)
+	datafier = Datifier(lowerBound = -10, upperBound = 10, pace = 1, evaluator = evaluator)
 	print(datafier.fillPoints())
-
+	mapper = MusicMapper()
+	musicMap = mapper.transformToMusic(datafier.fillPoints())
+	print musicMap
 main()
