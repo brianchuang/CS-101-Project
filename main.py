@@ -1,4 +1,4 @@
-from projectUtils import Evaluator, Datifier, MusicMapper
+from projectUtils import Evaluator, Datafier, MusicMapper
 import math
 import pysynth as ps
 def main():
@@ -8,7 +8,7 @@ def main():
 	incr = eval(raw_input('Increment: '))
 	transf = raw_input('Transform function: ')
 	evaluator = Evaluator(expr)
-	datafier = Datifier(lowerBound = lowBound, upperBound = upBound, pace = incr, evaluator = evaluator)
+	datafier = Datafier(lowerBound = lowBound, upperBound = upBound, pace = incr, evaluator = evaluator)
 	mapper = MusicMapper()
 	musicMap = mapper.transformToMusic(datafier.fillPoints())
 	ps.make_wav(musicMap, fn = "test.wav")

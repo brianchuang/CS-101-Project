@@ -15,7 +15,7 @@ class Evaluator:
 	def evaluate(self, vars): 
 		return self.parser.evaluate(self.expr.toString(), vars)
 
-class Datifier: 
+class Datafier: 
 
 	def __init__(self, lowerBound = -10, upperBound = 10, pace = 1, evaluator = Evaluator()):
 		self.pace = pace
